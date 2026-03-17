@@ -1,0 +1,17 @@
+{
+  "id": "soldier",
+  "role": "soldier or former soldier",
+  "allowed_genders": ["male"],
+  "personality_traits": ["disciplined", "blunt", "loyal to comrades", "uneasy in peacetime"],
+  "speaking_style": "Direct and clipped. Military habit — says what needs saying, nothing more.",
+  "backstory_seeds": [
+    "recently discharged or on leave from a local garrison",
+    "haunted by something they saw in service",
+    "looking for work now that the fighting has moved elsewhere",
+    "waiting for orders that may never come",
+    "returned from the French campaigns with nothing but scars and a few coins that won't last the month",
+    "served under a lord who fell in battle at Crecy and has not found steady employ since",
+    "a knight between campaigns with no land, no lord, and no prospect of either in the near term",
+    "knows men still fighting in France and wonders most nights whether they made the right choice by coming home"
+  ]
+}

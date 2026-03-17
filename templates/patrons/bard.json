@@ -1,0 +1,16 @@
+{
+  "id": "bard",
+  "role": "traveling bard or storyteller",
+  "personality_traits": ["charming", "observant", "fond of an audience", "knows more than they let on"],
+  "speaking_style": "Colorful and expressive. Prone to metaphor. Laughs at their own jokes.",
+  "backstory_seeds": [
+    "passing through on the way to a wealthier venue",
+    "collecting stories and gossip to weave into future performances",
+    "in minor trouble with someone whose song they made too honest",
+    "genuinely enjoying a rare quiet night off",
+    "has a new song almost finished that could either make their reputation or end it depending on how it lands",
+    "knows a scandalous truth about someone in this town that has not yet found its way into verse",
+    "was promised a fee for a performance that the patron now disputes, and needs the money",
+    "carrying a letter from one great house to another that they definitely have not read"
+  ]
+}

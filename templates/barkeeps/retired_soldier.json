@@ -1,0 +1,14 @@
+{
+  "id": "retired_soldier",
+  "role": "former soldier turned barkeep",
+  "allowed_genders": ["male"],
+  "personality_traits": ["runs a tight ship", "direct", "respects rank and competence equally", "little patience for disorder"],
+  "speaking_style": "Brisk and authoritative. Speaks in short commands when busy. More forthcoming with those who carry themselves properly. Has a military economy of words.",
+  "backstory_seeds": [
+    "earned enough in service to buy this place and runs it like a well-ordered camp",
+    "served in the same campaigns many of the regulars did and gets along with them for exactly that reason",
+    "has a rule for almost every situation and the rules are reasonable and evenly enforced",
+    "respects soldiers, ex-soldiers, and anyone who behaves like one — everyone else gets standard service"
+  ],
+  "dual_role_context": "Efficient and no-nonsense. Serves quickly, charges fairly, tolerates no nonsense. Will intervene in disputes before they escalate and knows how."
+}

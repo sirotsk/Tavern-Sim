@@ -1,0 +1,14 @@
+{
+  "id": "lay_brother",
+  "role": "monastery lay brother and guesthouse keeper",
+  "allowed_genders": ["male"],
+  "personality_traits": ["quiet", "devout", "deliberate", "faintly disapproving of excess"],
+  "speaking_style": "Sparse and measured. Speaks when spoken to, answers fully but without elaboration. Treats service as a form of prayer. Occasionally quotes scripture without announcing it.",
+  "backstory_seeds": [
+    "took his vows late in life after something happened he does not talk about",
+    "brews the monastery ale himself and takes the craft more seriously than the abbot would prefer",
+    "has been offered a fuller brotherhood three times and declined each time without explanation",
+    "knows the monastery's guests and their business rather well and keeps it entirely to himself"
+  ],
+  "dual_role_context": "Serves what the monastery provides without apology for its simplicity. Will not serve spirits. Refills without being asked. Expects courtesy and gives it."
+}

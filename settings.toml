@@ -1,0 +1,69 @@
+[model]
+# Gemini model name — change here to switch models without touching source code
+name = "gemini-2.5-flash"
+
+[session]
+# Number of patrons generated each launch (barkeep is always present, not counted)
+patron_min = 2
+patron_max = 5
+# Number of examinable objects generated per session
+object_min = 4
+object_max = 7
+
+[narrator]
+# Narrator verbosity: "brief" | "standard" | "verbose"
+verbosity = "standard"
+# Probability (0.0-1.0) of ambient flavor text after look/examine commands
+ambient_chance = 0.25
+
+[tavern]
+# Tavern template selection: "random" picks randomly from available templates
+# Or set to a template id slug (e.g. "rustic_inn") to always use that template
+selection = "random"
+
+[economy]
+# Starting gold drawn from this range (inclusive) each new session
+starting_gold_min = 10
+starting_gold_max = 25
+
+# --- Tavern size ranges (used when size system is active) ---
+# Each size defines patron, object, and shop item counts.
+# Tavern templates define size_weights to bias toward their natural size.
+
+[session.sizes.small]
+patron_min = 2
+patron_max = 3
+object_min = 3
+object_max = 4
+shop_count = 2
+menu_drinks = 3
+menu_food = 2
+
+[session.sizes.medium]
+patron_min = 3
+patron_max = 5
+object_min = 4
+object_max = 6
+shop_count = 3
+menu_drinks = 4
+menu_food = 3
+
+[session.sizes.large]
+patron_min = 5
+patron_max = 8
+object_min = 6
+object_max = 8
+shop_count = 4
+menu_drinks = 5
+menu_food = 4
+
+[server]
+# Port for the web server (default: 8000)
+port = 8000
+
+[images]
+# Enable AI image generation (tavern interiors and item images)
+# Set to false to disable all image generation (faster startup, no API calls)
+enabled = false
+# Gemini model for image generation (must support response_modalities=["TEXT","IMAGE"])
+model = "gemini-2.0-flash-exp-image-generation"

@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peasant Simulator: Tavern Edition</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/game.css">
+    <style>
+        /* Base styles (universal) */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: #0a0a0a;
+            background-image:
+                repeating-linear-gradient(
+                    90deg,
+                    transparent,
+                    transparent 2px,
+                    rgba(30, 20, 10, 0.15) 2px,
+                    rgba(30, 20, 10, 0.15) 4px
+                );
+            color: #c8a86b;
+            font-family: 'Courier New', Courier, monospace;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        #title-banner {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 1.1em;
+            line-height: 1.4;
+            text-align: center;
+            white-space: pre;
+        }
+    </style>
+</head>
+<body>
+    <!-- TITLE SCREEN -->
+    <div id="title-screen">
+        <pre id="title-banner">&#x2554;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2557;
+&#x2551;   PEASANT SIMULATOR: TAVERN EDITION  &#x2551;
+&#x2551;       Every ale tells a story.       &#x2551;
+&#x255A;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x255D;</pre>
+        <button id="continue-btn" style="display:none;">CONTINUE</button>
+        <button id="new-game-btn">NEW GAME</button>
+        <div id="name-input-area">
+            <label id="name-label" for="name-input">What is your name, traveler?</label>
+            <input type="text" id="name-input" maxlength="30" autocomplete="off" spellcheck="false">
+            <button id="name-submit-btn">Enter the Tavern</button>
+        </div>
+        <div id="overwrite-confirm" style="display:none;">
+            <p>Starting a new game will overwrite your existing save. Continue?</p>
+            <button id="overwrite-yes-btn">Yes, start fresh</button>
+            <button id="overwrite-no-btn">No, go back</button>
+        </div>
+        <button id="guide-btn">HOW TO PLAY</button>
+    </div>
+
+    <!-- LOADING SCREEN -->
+    <div id="loading-screen">
+        <div id="loading-spinner">|</div>
+        <div id="loading-text"></div>
+        <div id="loading-bar"></div>
+        <div id="loading-tip"></div>
+    </div>
+
+    <!-- GAME LAYOUT -->
+    <div id="game-layout">
+        <div id="text-window">
+            <div id="portrait-banner">
+                <img id="portrait-img" src="" alt="">
+                <div id="portrait-name"></div>
+            </div>
+        </div>
+        <div id="side-panel">
+            <div class="panel-section">
+                <div class="panel-label">TRAVELER</div>
+                <div class="panel-value" id="stat-name"></div>
+            </div>
+            <div class="panel-divider">&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;</div>
+            <div class="panel-section">
+                <div class="panel-label">CONDITION</div>
+                <div class="panel-value" id="stat-drunk-meter"></div>
+            </div>
+            <div class="panel-divider">&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;</div>
+            <div class="panel-section">
+                <div class="panel-label">GOLD</div>
+                <div class="panel-value" id="stat-money">--</div>
+            </div>
+            <div class="panel-divider">&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;</div>
+            <div class="panel-section">
+                <div class="panel-label">INVENTORY</div>
+                <div class="panel-value" id="stat-inventory">Empty</div>
+            </div>
+            <div class="panel-divider">&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;</div>
+            <div class="panel-section">
+                <div class="panel-label">INTERACTIONS</div>
+                <div class="panel-value" id="stat-interactions">0</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- INPUT BAR -->
+    <div id="input-bar">
+        <span id="prompt-char">&#62;</span>
+        <input type="text" id="cmd-input" autocomplete="off" spellcheck="false">
+        <button id="guide-help-btn" title="How to Play">?</button>
+        <button id="mute-toggle" title="Toggle audio">&#x266B;</button>
+    </div>
+
+    <!-- DISCONNECT OVERLAY -->
+    <div id="disconnect-overlay">
+        <p>Connection lost</p>
+        <button id="reconnect-btn">Reconnect</button>
+    </div>
+
+    <!-- GUIDE MODAL -->
+    <div id="lightbox">
+        <div id="lightbox-content">
+            <button id="lightbox-close-btn">&times;</button>
+            <img id="lightbox-img" src="" alt="">
+        </div>
+    </div>
+    <div id="guide-modal">
+      <div id="guide-content">
+        <button id="guide-close-btn">&times;</button>
+        <h1>A Traveler's Handbook</h1>
+
+        <div class="guide-section">
+          <h2>Parlance of the Tavern</h2>
+          <p class="guide-intro">Commands ye shall need, listed as a new traveler would discover them:</p>
+
+          <div class="guide-cmd">
+            <span class="guide-cmd-name">look</span> <span class="guide-cmd-alias">(l)</span>
+            <span class="guide-cmd-desc">&#8212; Survey the tavern and its occupants. A good first step upon entering any unfamiliar place.</span>
+          </div>
+
+          <div class="guide-cmd">
+            <span class="guide-cmd-name">examine [target]</span> <span class="guide-cmd-alias">(x)</span>
+            <span class="guide-cmd-desc">&#8212; Take a closer look at someone or something. Use a number from the look list, a name, or a keyword.</span>
+          </div>
+
+          <div class="guide-cmd">
+            <span class="guide-cmd-name">talk to [patron]</span> <span class="guide-cmd-alias">(t)</span>
+            <span class="guide-cmd-desc">&#8212; Strike up a conversation with a patron or the barkeep. You may use their name or a number from the look list.</span>
+          </div>
+
+          <div class="guide-cmd">
+            <span class="guide-cmd-name">end conversation</span>
+            <span class="guide-cmd-desc">&#8212; Walk away from whoever you are talking to. Always polite to say farewell first.</span>
+          </div>
+
+          <div class="guide-cmd">
+            <span class="guide-cmd-name">order [drink/food]</span>
+            <span class="guide-cmd-desc">&#8212; Order food or drink from the barkeep. Works anytime, no conversation needed.</span>
+          </div>
+
+          <div class="guide-cmd">
+            <span class="guide-cmd-name">menu</span> <span class="guide-cmd-alias">(m)</span>
+            <span class="guide-cmd-desc">&#8212; See what food and drink the barkeep serves. Prices vary by establishment.</span>
+          </div>
+
+          <div class="guide-cmd">
+            <span class="guide-cmd-name">shop</span> <span class="guide-cmd-alias">(s)</span>
+            <span class="guide-cmd-desc">&#8212; Browse the barkeep's selection of trinkets and curiosities for sale.</span>
+          </div>
+
+          <div class="guide-cmd">
+            <span class="guide-cmd-name">buy [item]</span> <span class="guide-cmd-alias">(b)</span>
+            <span class="guide-cmd-desc">&#8212; Purchase a trinket from the barkeep's shop. Gold is deducted from your purse.</span>
+          </div>
+
+          <div class="guide-cmd">
+            <span class="guide-cmd-name">use [item]</span>
+            <span class="guide-cmd-desc">&#8212; Use an item from your inventory. Effects depend on the item.</span>
+          </div>
+
+          <div class="guide-cmd">
+            <span class="guide-cmd-name">give [item]</span>
+            <span class="guide-cmd-desc">&#8212; Give an item to whoever you are talking to. You must be in conversation.</span>
+            <span class="guide-cmd-detail">Example: give ale</span>
+          </div>
+
+          <div class="guide-cmd">
+            <span class="guide-cmd-name">give [amount] gold</span>
+            <span class="guide-cmd-desc">&#8212; Hand over some of your gold to a patron you are speaking with.</span>
+            <span class="guide-cmd-detail">Example: give 5 gold</span>
+          </div>
+
+          <div class="guide-cmd">
+            <span class="guide-cmd-name">challenge</span>
+            <span class="guide-cmd-desc">&#8212; Challenge the patron you are speaking with to a bar game for gold.</span>
+            <span class="guide-cmd-detail">If they accept, you choose which game to play from the ones they know.</span>
+          </div>
+
+          <div class="guide-cmd">
+            <span class="guide-cmd-name">take [item]</span>
+            <span class="guide-cmd-desc">&#8212; Pick up an interactable item from the tavern environment and add it to your inventory.</span>
+          </div>
+
+          <div class="guide-cmd">
+            <span class="guide-cmd-name">examine inv [item]</span>
+            <span class="guide-cmd-desc">&#8212; Inspect an item in your inventory for details, history, or lore.</span>
+          </div>
+
+          <div class="guide-cmd">
+            <span class="guide-cmd-name">status</span>
+            <span class="guide-cmd-desc">&#8212; Check your current state: name, condition, location, and active conversations.</span>
+          </div>
+
+          <div class="guide-cmd">
+            <span class="guide-cmd-name">help</span> <span class="guide-cmd-alias">(?)</span>
+            <span class="guide-cmd-desc">&#8212; Show the in-game command reference sign posted on the tavern wall.</span>
+          </div>
+
+          <div class="guide-cmd">
+            <span class="guide-cmd-name">quit</span> <span class="guide-cmd-alias">(q)</span>
+            <span class="guide-cmd-desc">&#8212; Leave the tavern and end the session. Your progress can be saved first.</span>
+          </div>
+
+          <div class="guide-note">
+            While in conversation, prefix commands with / (e.g., /look, /order ale). Plain text is spoken directly to whoever you are talking to.
+          </div>
+        </div>
+
+        <div class="guide-divider">&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;</div>
+
+        <div class="guide-section">
+          <h2>The Measure of a Man's Drink</h2>
+          <p class="guide-intro">As you drink, your condition changes through five stages:</p>
+
+          <div class="guide-tier">
+            <span class="guide-tier-name">0 &#x2014; Clear-headed</span>
+            <span class="guide-tier-desc">&#8212; No effects. Sharp as a blade and steady on your feet.</span>
+          </div>
+
+          <div class="guide-tier">
+            <span class="guide-tier-name">1 &#x2014; Merry</span>
+            <span class="guide-tier-desc">&#8212; Mild speech slurring begins. A pleasant warmth colors the room. The world sways very gently.</span>
+          </div>
+
+          <div class="guide-tier">
+            <span class="guide-tier-name">2 &#x2014; In his cups</span>
+            <span class="guide-tier-desc">&#8212; Noticeable slurring in your words. The text window blurs and the sway grows more pronounced.</span>
+          </div>
+
+          <div class="guide-tier">
+            <span class="guide-tier-name">3 &#x2014; Three sheets to the wind</span>
+            <span class="guide-tier-desc">&#8212; Heavy garbling of speech. The screen sways strongly and vision becomes quite blurred.</span>
+          </div>
+
+          <div class="guide-tier">
+            <span class="guide-tier-name">4 &#x2014; Gone to the saints</span>
+            <span class="guide-tier-desc">&#8212; Nearly incoherent. Maximum visual distortion. You may not last much longer on your feet.</span>
+          </div>
+
+          <div class="guide-note">
+            Both effects are real: your typed speech garbles (others may struggle to understand you) and the screen itself blurs and sways. Food and water will sober you up.
+          </div>
+        </div>
+
+        <div class="guide-divider">&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;</div>
+
+        <div class="guide-section">
+          <h2>The Art of Wagering</h2>
+          <p class="guide-intro">Challenge any patron to a game of chance for gold.</p>
+          <p class="guide-lore">
+            Use the <span class="guide-cmd-name">challenge</span> command while speaking with a patron to propose a wager.
+            If they accept, they'll tell you which games they know &#8212; you choose which one to play.
+            Both players stake gold before the game begins; the winner takes all.
+            Not every patron will accept &#8212; some are too cautious, some too proud, and some have
+            already lost their purse to another traveler tonight.
+            Watch how they react to winning and losing &#8212; it reveals much about their character.
+          </p>
+        </div>
+
+        <div class="guide-divider">&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;</div>
+
+        <div class="guide-section">
+          <h2>Coin and Commerce</h2>
+          <p class="guide-intro">Gold makes the tavern go round.</p>
+          <p class="guide-lore">
+            You begin each session with a purse of gold, shown in the side panel. Spend it wisely:
+            food and drink can be ordered anytime (use <span class="guide-cmd-name">menu</span> to see prices).
+            Water is always free and will help clear your head if the ale gets the better of you.
+            Trinkets are purchased from the shop (<span class="guide-cmd-name">shop</span> to browse,
+            <span class="guide-cmd-name">buy</span> to purchase).
+            Gold can be earned by winning bar games or by receiving gifts from generous patrons.
+            You may also give gold directly to a patron mid-conversation with
+            <span class="guide-cmd-name">give [amount] gold</span> &#8212; some appreciate the gesture more than others.
+          </p>
+        </div>
+
+        <div class="guide-divider">&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;</div>
+
+        <div class="guide-section">
+          <h2>Satchel and Sundries</h2>
+          <p class="guide-intro">Your inventory holds trinkets, gifts, and curiosities.</p>
+          <p class="guide-lore">
+            Items are acquired by buying from the barkeep's shop, receiving gifts from patrons,
+            or picking up objects left around the tavern with <span class="guide-cmd-name">take</span>.
+            Your current inventory is always visible in the side panel.
+            Use <span class="guide-cmd-name">use [item]</span> to activate an item,
+            <span class="guide-cmd-name">give [item]</span> to offer it to whoever you are speaking with,
+            and <span class="guide-cmd-name">examine inv [item]</span> to read its description and lore.
+            Items are often conversation starters &#8212; the right gift given to the right person
+            can open unexpected doors.
+          </p>
+        </div>
+
+        <div class="guide-divider">&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;</div>
+
+        <div class="guide-section">
+          <h2>Saving Your Tale</h2>
+          <p class="guide-intro">Your adventure persists between visits.</p>
+          <p class="guide-lore">
+            Type <span class="guide-cmd-name">save</span> at any time to save your progress:
+            your gold, inventory, relationships, and the state of the tavern are all preserved.
+            The next time you visit, click <span class="guide-cmd-name">CONTINUE</span> on the title screen
+            to resume exactly where you left off &#8212; same tavern, same patrons, same unfinished business.
+            Clicking <span class="guide-cmd-name">NEW GAME</span> will ask for confirmation before overwriting
+            your existing save, so you will never lose progress by accident.
+          </p>
+        </div>
+
+        <div class="guide-divider">&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;</div>
+
+        <div class="guide-section">
+          <h2>Words of Wisdom</h2>
+
+          <div class="guide-tip">Save before high-stakes wagers &#8212; fortune is fickle.</div>
+          <div class="guide-tip">A wise traveler keeps coin in reserve. The barkeep does not extend credit.</div>
+          <div class="guide-tip">Examine everything &#8212; the tavern holds secrets for the observant.</div>
+          <div class="guide-tip">Each patron has their own story. Talk to everyone.</div>
+          <div class="guide-tip">The barkeep's shop restocks with unique trinkets each session.</div>
+          <div class="guide-tip">In conversation, speak naturally &#8212; patrons respond to what you say, not just commands.</div>
+        </div>
+
+        <div class="guide-divider">&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;</div>
+
+        <div class="guide-section">
+          <h2>Of Taverns and Their Keepers</h2>
+          <p class="guide-intro">A note on the world you've entered.</p>
+          <p class="guide-lore">
+            Every tavern in these lands is its own world. Each has a different name, a different barkeep
+            with their own history and temperament, and a rotating cast of patrons who have wandered in
+            from roads you have never walked. No two sessions are alike &#8212; what happens tonight is
+            shaped entirely by your choices, your words, and the luck of who happens to be drinking
+            when you push open the door.
+          </p>
+          <p class="guide-lore" style="margin-top: 0.6em;">
+            The patrons are not scripted. Each carries a personality, a background, secrets they may
+            or may not share, and opinions that shift based on how you treat them. Be curious. Be bold.
+            Be generous, or be ruthless &#8212; the tavern will remember.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <script src="/static/game.js"></script>
+</body>
+</html>

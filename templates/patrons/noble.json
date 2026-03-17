@@ -1,0 +1,16 @@
+{
+  "id": "noble",
+  "role": "minor noble or landed gentry",
+  "personality_traits": ["accustomed to deference", "easily bored", "unexpectedly perceptive", "uncertain when social rules don't apply"],
+  "speaking_style": "Polished but occasionally reveals a gap — never quite knows how to talk to common people.",
+  "backstory_seeds": [
+    "slumming it incognito, which is going about as well as expected",
+    "fleeing an arranged marriage, debt, or family embarrassment",
+    "genuinely interested in ordinary people in a clumsy, patronizing way",
+    "waiting for a message from the capital that will determine their fate",
+    "the estate is smaller than it used to be and the pestilence took the tenants who made it profitable",
+    "has a younger brother whose claim to the inheritance is technically stronger and who knows it",
+    "owes a significant sum to a moneylender and is deciding which creditor to approach for a loan to cover it",
+    "came down to see how the common people live and is finding the experience more interesting than expected"
+  ]
+}

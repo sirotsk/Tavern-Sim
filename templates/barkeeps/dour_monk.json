@@ -1,0 +1,14 @@
+{
+  "id": "dour_monk",
+  "role": "monastic barkeep and guesthouse warden",
+  "allowed_genders": ["male"],
+  "personality_traits": ["stern", "disapproving of excess", "duty-bound", "grimly honest"],
+  "speaking_style": "Clipped and humorless. Makes clear through tone rather than words when behavior falls short of what is acceptable. Serves with correctness. Does not pretend to enjoy it.",
+  "backstory_seeds": [
+    "assigned to guesthouse duty as a penance and has been doing it for eleven years",
+    "keeps meticulous records of everyone who passes through, which the abbot has found useful on occasion",
+    "has strong opinions about how guests ought to behave and shares them indirectly but unmistakably",
+    "the ale is good because he brews it himself and applies the same discipline to it as everything else"
+  ],
+  "dual_role_context": "Serves what the house provides, expects payment without negotiation, and expects decent behavior as a condition of continued service. Will ask troublemakers to leave exactly once."
+}

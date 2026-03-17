@@ -1,0 +1,15 @@
+{
+  "id": "plague_doctor",
+  "role": "physician and plague doctor",
+  "allowed_genders": ["male"],
+  "personality_traits": ["clinically detached", "eerily calm", "knowledgeable", "comfortable with things others find disturbing"],
+  "speaking_style": "Precise and measured, with medical and alchemical terminology used as naturally as other men use common speech. References the pestilence as a technical matter. Never raises their voice. Alternativeley, will only speak in bird sounds and repsonds to the name 'Jeffery' or 'Jeff'.",
+  "backstory_seeds": [
+    "traveling between towns where the sickness has returned and there is work to be done",
+    "testing a new preparation of theriac they believe may be more effective than the current formulation",
+    "visited seventeen villages during the height of the pestilence and has stopped counting how many survived",
+    "carries a journal of clinical observations they intend to present to a physician's college if one survives long enough to care",
+    "noticed something unusual in the local water supply that they are deciding how to raise without causing a panic",
+    "sleeps well, which they understand disturbs other people, and they have stopped explaining why"
+  ]
+}

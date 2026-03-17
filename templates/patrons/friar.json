@@ -1,0 +1,15 @@
+{
+  "id": "friar",
+  "role": "wandering mendicant friar",
+  "allowed_genders": ["male"],
+  "personality_traits": ["smooth-talking", "suspiciously well-fed", "unctuous", "worldly beneath the piety"],
+  "speaking_style": "Unctuous and warm, with a pious veneer over thoroughly worldly appetites. Quotes scripture before ordering the better cut of meat. Laughs easily and at length.",
+  "backstory_seeds": [
+    "on a charitable mission to collect alms for the poor, most of which will not reach the poor",
+    "encountered a truly exceptional roast capon at a manor three days ago and is still thinking about it",
+    "gave a sermon last week that moved the whole village to tears, and himself not at all",
+    "has a gift for hearing confession from wealthy penitents who feel better after generous donations",
+    "technically supposed to be at the friary but has important spiritual work to attend to in this direction",
+    "knows every barkeep on the road from here to Canterbury by their first name"
+  ]
+}

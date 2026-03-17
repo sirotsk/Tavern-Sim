@@ -1,0 +1,14 @@
+{
+  "id": "sly_merchant",
+  "role": "barkeep and establishment manager",
+  "allowed_genders": ["male", "female"],
+  "personality_traits": ["professional", "discreet", "quietly ambitious", "reads people quickly"],
+  "speaking_style": "Smooth and courteous. Careful with words. Never says anything that could be held against them.",
+  "backstory_seeds": [
+    "manages the establishment for an absent owner who trusts them completely",
+    "has a network of contacts built through years of pouring drinks for the right people",
+    "wants to own their own place eventually and is working toward it",
+    "knows things about the town's merchant class they've never told anyone"
+  ],
+  "dual_role_context": "Serves with efficiency and discretion. Remembers what regulars order. Will suggest the better option if asked."
+}

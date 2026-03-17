@@ -1,0 +1,14 @@
+{
+  "id": "madman",
+  "role": "local conspiracy ranter",
+  "personality_traits": ["paranoid", "erratic", "surprisingly lucid at odd moments", "sees plots everywhere"],
+  "speaking_style": "Jumps between topics mid-sentence. Lowers voice to a hiss at conspiratorial moments, then forgets to lower it again. Grabs your sleeve to make a point.",
+  "backstory_seeds": [
+    "knows something genuinely true that nobody believes because of how he says it",
+    "used to be a sensible man before something happened that he only describes in fragments",
+    "has been asked to leave three taverns this week already",
+    "carries a scrap of parchment covered in cramped writing he claims proves everything",
+    "convinced the miller, the tanner, and the reeve are all in it together",
+    "hasn't slept properly in weeks because they watch the house at night"
+  ]
+}

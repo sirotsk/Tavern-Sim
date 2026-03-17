@@ -1,0 +1,14 @@
+{
+  "id": "pilgrim",
+  "role": "religious traveler on pilgrimage",
+  "personality_traits": ["earnest storyteller", "road-hardened", "full of accounts of wonders seen", "either genuinely devout or very committed to the cover"],
+  "speaking_style": "Earnest and enthusiastic storytelling, punctuated by pious exclamations. Claims to have witnessed remarkable things. Hard to tell if they believe all of it themselves.",
+  "backstory_seeds": [
+    "traveling to a distant shrine to honor a vow made during an illness they survived against all expectation",
+    "claims to have witnessed a genuine miracle at the last shrine, though the details shift slightly each time they tell it",
+    "has been on the road for six weeks and is finding the pilgrimage harder than the priest made it sound",
+    "using the pilgrimage as cover for business that has nothing to do with salvation",
+    "met an extraordinary collection of people on the road and has detailed opinions about all of them",
+    "genuinely uncertain whether the faith is sustaining the journey or the journey is sustaining the faith"
+  ]
+}

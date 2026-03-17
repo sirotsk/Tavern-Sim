@@ -1,0 +1,91 @@
+{
+  "id": "harbor_dockside",
+  "name_theme": "harbor",
+  "atmosphere": {
+    "mood": "Rough and loud. Strangers are welcome if they have coin.",
+    "lighting": "Dim — lanterns swing with the sea draft, shadows everywhere",
+    "smells": "Salt air, fish, tar, and something unidentifiable burning in the firepit",
+    "sounds": "Shouted arguments, dice rattling on wood, boots on wet planking, distant seagulls"
+  },
+  "layout": "A low-ceilinged room with heavy beams. Long communal tables, benches worn smooth by decades of sailors. A bar running the full length of one wall. A locked door at the back that nobody asks about.",
+  "menu": {
+    "drinks": [
+      {"name": "Ship's grog", "description": "Rum cut with water and lime. Barely.", "drunkenness_modifier": 10, "cost": 3},
+      {"name": "Dockside ale", "description": "Thick enough to chew", "drunkenness_modifier": 6, "cost": 2},
+      {"name": "Smuggler's reserve", "description": "No questions, don't ask", "drunkenness_modifier": 20, "cost": 6},
+      {"name": "Dark rum", "description": "Imported from the southern islands — molasses-sweet and fierce", "drunkenness_modifier": 14, "cost": 4},
+      {"name": "Foreign wine", "description": "A rough bottle of something from distant shores, likely traded off a ship", "drunkenness_modifier": 8, "cost": 3},
+      {"name": "Sailor's tot", "description": "A stiff measure of spirit dispensed at the end of a hard watch", "drunkenness_modifier": 12, "cost": 1},
+      {"name": "Water", "description": "A cup of well water, clear and cold", "drunkenness_modifier": -4, "cost": 0}
+    ],
+    "food": [
+      {"name": "Salt fish and hardtack", "description": "Sailor's rations, available on land", "drunkenness_modifier": -5, "cost": 2},
+      {"name": "Fish stew", "description": "Today's catch, probably", "drunkenness_modifier": -7, "cost": 3},
+      {"name": "Pickled eggs", "description": "Better than nothing", "drunkenness_modifier": -2, "cost": 1},
+      {"name": "Salt cod", "description": "Shredded and pan-fried with onions — a staple of the dockside diet", "drunkenness_modifier": -4, "cost": 2},
+      {"name": "Shellfish stew", "description": "Mussels, whelks, and clams in a briny broth — if it smells off, send it back", "drunkenness_modifier": -10, "cost": 6}
+    ]
+  },
+  "patron_archetype_weights": {
+    "traveling_merchant": 2,
+    "soldier": 3,
+    "bard": 2,
+    "laborer": 4,
+    "farmer": 1,
+    "scholar": 0,
+    "noble": 0,
+    "herbalist": 1,
+    "madman": 3,
+    "duder": 1,
+    "friar": 1,
+    "pilgrim": 1,
+    "cutpurse": 4,
+    "blacksmith": 2,
+    "plague_doctor": 1,
+    "beggar": 3
+  },
+  "barkeep_archetype_weights": {
+    "gruff_veteran": 3,
+    "sly_merchant": 1,
+    "motherly_alewife": 3,
+    "lay_brother": 0,
+    "scarred_survivor": 2,
+    "retired_soldier": 0,
+    "dour_monk": 0,
+    "jovial_brewer": 1
+  },
+  "patron_gold_ranges": {
+    "traveling_merchant": [15, 30],
+    "soldier": [8, 20],
+    "bard": [5, 15],
+    "laborer": [3, 10],
+    "farmer": [2, 6],
+    "scholar": [10, 25],
+    "noble": [25, 50],
+    "herbalist": [5, 15],
+    "madman": [1, 5],
+    "duder": [5, 20],
+    "friar": [2, 6],
+    "pilgrim": [3, 10],
+    "cutpurse": [5, 15],
+    "blacksmith": [8, 18],
+    "plague_doctor": [10, 25],
+    "beggar": [1, 3]
+  },
+  "size_weights": {"small": 1, "medium": 3, "large": 5},
+  "game_weights": {
+    "high_card": 5,
+    "coin_toss": 4,
+    "high_roll": 4,
+    "odds_and_evens": 3,
+    "morra": 3,
+    "cup_and_ball": 2,
+    "over_under": 2,
+    "sword_shield_arrow": 1,
+    "arm_wrestle": 4,
+    "beggars_bluff": 4,
+    "knucklebones": 3,
+    "three_card": 3,
+    "merchants_gambit": 3
+  }
+}

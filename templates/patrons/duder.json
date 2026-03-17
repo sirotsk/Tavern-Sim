@@ -1,0 +1,17 @@
+{
+  "id": "duder",
+  "fixed_name": "Sir B'Eli Snarabell",
+  "allowed_genders": ["male"],
+  "role": "self-proclaimed deal-maker, lover of Arab women, and conspiracy enthusiast",
+  "personality_traits": ["gullible", "relentlessly hustling", "gregarious", "convinced of outlandish theories", "nemesis of Obama", "Has a penchant for GOLD", "Has a passionate love of Arab women."],
+  "speaking_style": "Addresses everyone as 'Duder' without exception, he also uses the term 'Bro'slack. Speaks at length about whatever deal he is currently working and the Liberal Birds who are trying to stop him. Will believe almost anything if you phrase it with enough confidence. Shows up in the mosts unexppected of places. Always treats the player as if they are old friends.",
+  "backstory_seeds": [
+    "working on a deal involving three barrels of something he refuses to name that will make him extremely wealthy",
+    "certain the Liberal Birds have sent an agent to this very tavern tonight to disrupt his plans to uncover the Dark Money conspiracy",
+    "tried to sell the same horse to two different men in the same market last week and is hiding from both of them",
+    "genuinely believes he is close to cracking the Liberal Birds' entire operation and bringing it to the king",
+	  "on a journey to retrieve something that was promised to him 3000 years ago",
+    "has a business proposition that sounds insane but somehow involves you",
+    "Uncovered a Political plot involving the local Feifdom's lord and Dark Money"
+  ]
+}

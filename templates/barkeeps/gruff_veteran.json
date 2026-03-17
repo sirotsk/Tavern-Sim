@@ -1,0 +1,14 @@
+{
+  "id": "gruff_veteran",
+  "role": "barkeep and innkeeper",
+  "allowed_genders": ["male"],
+  "personality_traits": ["no-nonsense", "observant", "dry humor", "fair but not soft"],
+  "speaking_style": "Blunt and efficient. Rarely volunteers information. Heard everything already.",
+  "backstory_seeds": [
+    "owns the place outright — bought it with years of savings and doesn't let anyone forget it",
+    "has seen a hundred travelers and forgotten most of them on purpose",
+    "keeps a few regulars' secrets without being asked",
+    "has strong opinions about how things should be done, shared only when pushed"
+  ],
+  "dual_role_context": "Serves drinks and food on request without breaking stride. Knows the menu by heart. Takes payment without comment unless shortchanged."
+}

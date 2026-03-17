@@ -1,0 +1,92 @@
+{
+  "id": "monastery_guesthouse",
+  "name_theme": "monastery",
+  "atmosphere": {
+    "mood": "Quiet and contemplative. Candles flicker on stone walls. Hushed voices conceal more than they reveal.",
+    "lighting": "Candlelit — small tallow candles on every table, iron sconces along the walls",
+    "smells": "Beeswax, dried herbs, faint incense, and bread baking somewhere beyond the door",
+    "sounds": "Murmured prayers, the scratch of quill on parchment, distant bells, the occasional cough"
+  },
+  "layout": "A stone-walled room attached to a small abbey. Wooden benches line trestle tables worn smooth by generations of pilgrims. A simple bar of plain timber serves the room. A heavy door at the far end leads to the cloister, always slightly ajar.",
+  "menu": {
+    "drinks": [
+      {"name": "Monastery ale", "description": "Brewed by the brothers — light, slightly bitter, blessed (allegedly)", "drunkenness_modifier": 3, "cost": 1},
+      {"name": "Herb tisane", "description": "Dried chamomile and mint steeped in hot water", "drunkenness_modifier": -2, "cost": 1},
+      {"name": "Small beer", "description": "Low in strength, high in virtue", "drunkenness_modifier": 2, "cost": 1},
+      {"name": "Monastery wine", "description": "A careful vintage from the abbey's own vineyard — dark, dry, and solemn", "drunkenness_modifier": 8, "cost": 4},
+      {"name": "Rosehip cordial", "description": "A sweet non-alcoholic cordial pressed from hedgerow berries — refreshing and restorative", "drunkenness_modifier": -3, "cost": 2},
+      {"name": "Elder spirit", "description": "A small medicinal measure of strong spirit distilled by the apothecary brother", "drunkenness_modifier": 12, "cost": 8},
+      {"name": "Water", "description": "A cup of well water, blessed by the abbot", "drunkenness_modifier": -4, "cost": 0}
+    ],
+    "food": [
+      {"name": "Brown bread", "description": "Dense and filling — baked fresh each morning", "drunkenness_modifier": -3, "cost": 1},
+      {"name": "Pottage", "description": "Thick vegetable broth with barley and herbs", "drunkenness_modifier": -5, "cost": 1},
+      {"name": "Hard cheese", "description": "Aged in the cellar, crumbling but sharp", "drunkenness_modifier": -2, "cost": 1},
+      {"name": "Dried fish", "description": "Salt-cured, plain, sustaining", "drunkenness_modifier": -3, "cost": 2},
+      {"name": "Vegetable pottage", "description": "A heartier version of the standard pottage — rich with garden vegetables and monastery herbs", "drunkenness_modifier": -7, "cost": 3},
+      {"name": "Honey cakes", "description": "Small dense cakes sweetened with monastery honey — a rare treat offered to pious guests", "drunkenness_modifier": -10, "cost": 5}
+    ]
+  },
+  "patron_archetype_weights": {
+    "bard": 1,
+    "farmer": 1,
+    "herbalist": 2,
+    "laborer": 1,
+    "noble": 1,
+    "scholar": 3,
+    "soldier": 0,
+    "traveling_merchant": 1,
+    "madman": 0,
+    "duder": 1,
+    "friar": 4,
+    "pilgrim": 5,
+    "cutpurse": 0,
+    "blacksmith": 0,
+    "plague_doctor": 1,
+    "beggar": 3
+  },
+  "barkeep_archetype_weights": {
+    "gruff_veteran": 0,
+    "sly_merchant": 0,
+    "motherly_alewife": 1,
+    "lay_brother": 5,
+    "scarred_survivor": 0,
+    "retired_soldier": 0,
+    "dour_monk": 4,
+    "jovial_brewer": 1
+  },
+  "patron_gold_ranges": {
+    "bard": [3, 8],
+    "farmer": [2, 6],
+    "herbalist": [4, 10],
+    "laborer": [2, 6],
+    "noble": [20, 40],
+    "scholar": [8, 18],
+    "soldier": [4, 12],
+    "traveling_merchant": [8, 18],
+    "madman": [1, 4],
+    "duder": [5, 15],
+    "friar": [2, 6],
+    "pilgrim": [3, 8],
+    "cutpurse": [4, 10],
+    "blacksmith": [6, 14],
+    "plague_doctor": [8, 20],
+    "beggar": [1, 3]
+  },
+  "size_weights": {"small": 5, "medium": 3, "large": 1},
+  "game_weights": {
+    "odds_and_evens": 4,
+    "morra": 4,
+    "cup_and_ball": 3,
+    "high_roll": 2,
+    "over_under": 2,
+    "coin_toss": 2,
+    "high_card": 1,
+    "sword_shield_arrow": 1,
+    "knucklebones": 3,
+    "three_card": 1,
+    "beggars_bluff": 1,
+    "merchants_gambit": 1,
+    "arm_wrestle": 0
+  }
+}

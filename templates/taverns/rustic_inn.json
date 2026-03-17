@@ -1,0 +1,92 @@
+{
+  "id": "rustic_inn",
+  "name_theme": "rustic",
+  "atmosphere": {
+    "mood": "Rowdy but warm. A fire crackles. Laughter erupts from a corner table.",
+    "lighting": "Low and smoky — oil lanterns hang from blackened beams",
+    "smells": "Woodsmoke, tallow candles, spilled ale, and sawdust",
+    "sounds": "Murmur of conversation, occasional laughter, a dog scratching near the hearth"
+  },
+  "layout": "A single common room with rough-hewn tables and mismatched stools. A long bar of scarred oak runs along the back wall. A staircase leads to rooms above. A fireplace dominates the east wall.",
+  "menu": {
+    "drinks": [
+      {"name": "Ale", "description": "Dark and bitter, served warm", "drunkenness_modifier": 5, "cost": 2},
+      {"name": "Mead", "description": "Honey-sweet, dangerously smooth", "drunkenness_modifier": 8, "cost": 3},
+      {"name": "Spirits", "description": "Unnamed, brown, and potent", "drunkenness_modifier": 15, "cost": 5},
+      {"name": "Cheap Cider", "description": "Cloudy and sharp, pressed from culled orchard apples", "drunkenness_modifier": 4, "cost": 1},
+      {"name": "Country Wine", "description": "Rough red wine from a local vineyard, strong and unremarkable", "drunkenness_modifier": 10, "cost": 4},
+      {"name": "Harvest Mead", "description": "A special batch from the beekeeper's autumn harvest — rich and intoxicating", "drunkenness_modifier": 18, "cost": 8},
+      {"name": "Water", "description": "A cup of well water, clear and cold", "drunkenness_modifier": -4, "cost": 0}
+    ],
+    "food": [
+      {"name": "Bread and cheese", "description": "Simple but filling", "drunkenness_modifier": -3, "cost": 1},
+      {"name": "Stew", "description": "Mystery meat in root vegetable broth", "drunkenness_modifier": -6, "cost": 3},
+      {"name": "Roast mutton", "description": "Greasy and satisfying", "drunkenness_modifier": -8, "cost": 4},
+      {"name": "Porridge", "description": "A thick bowl of oat porridge with a drizzle of honey", "drunkenness_modifier": -4, "cost": 1},
+      {"name": "Pickled eggs", "description": "Six eggs in brine, sharp and briny", "drunkenness_modifier": -2, "cost": 1},
+      {"name": "Smoked sausage", "description": "A platter of thick-cut smoked sausage with mustard and bread", "drunkenness_modifier": -10, "cost": 5}
+    ]
+  },
+  "patron_archetype_weights": {
+    "traveling_merchant": 2,
+    "soldier": 3,
+    "bard": 1,
+    "laborer": 5,
+    "farmer": 4,
+    "scholar": 1,
+    "noble": 0,
+    "herbalist": 1,
+    "madman": 1,
+    "duder": 1,
+    "friar": 2,
+    "pilgrim": 2,
+    "cutpurse": 1,
+    "blacksmith": 3,
+    "plague_doctor": 0,
+    "beggar": 2
+  },
+  "barkeep_archetype_weights": {
+    "gruff_veteran": 5,
+    "sly_merchant": 0,
+    "motherly_alewife": 3,
+    "lay_brother": 0,
+    "scarred_survivor": 1,
+    "retired_soldier": 1,
+    "dour_monk": 0,
+    "jovial_brewer": 2
+  },
+  "patron_gold_ranges": {
+    "traveling_merchant": [10, 25],
+    "soldier": [5, 15],
+    "bard": [3, 10],
+    "laborer": [2, 8],
+    "farmer": [3, 8],
+    "scholar": [8, 20],
+    "noble": [30, 60],
+    "herbalist": [5, 12],
+    "madman": [1, 5],
+    "duder": [5, 20],
+    "friar": [2, 6],
+    "pilgrim": [3, 10],
+    "cutpurse": [5, 15],
+    "blacksmith": [8, 18],
+    "plague_doctor": [10, 25],
+    "beggar": [1, 3]
+  },
+  "size_weights": {"small": 3, "medium": 5, "large": 2},
+  "game_weights": {
+    "high_roll": 5,
+    "over_under": 4,
+    "coin_toss": 4,
+    "cup_and_ball": 3,
+    "morra": 3,
+    "odds_and_evens": 3,
+    "high_card": 2,
+    "sword_shield_arrow": 1,
+    "arm_wrestle": 4,
+    "knucklebones": 4,
+    "beggars_bluff": 2,
+    "three_card": 2,
+    "merchants_gambit": 1
+  }
+}

@@ -1,0 +1,676 @@
+/* === GAME LAYOUT === */
+
+/* Body override when game is active */
+body.game-mode {
+    justify-content: flex-start;
+    align-items: stretch;
+}
+
+#game-layout {
+    display: none; /* hidden until game starts */
+    flex-direction: row;
+    height: calc(100vh - 42px); /* room for fixed input bar */
+    width: 100%;
+}
+
+body.game-mode #game-layout {
+    display: flex;
+}
+
+/* === TEXT WINDOW === */
+
+#text-window {
+    flex: 3; /* 75% */
+    overflow-y: auto;
+    padding: 1em 1.5em;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3em;
+    scroll-behavior: smooth;
+    border-right: 3px double #4a3f2a;
+    transition: filter 1.5s ease-in-out;
+    will-change: filter, transform;
+}
+
+/* Scrollbar styling (DOS aesthetic) */
+#text-window::-webkit-scrollbar {
+    width: 8px;
+}
+#text-window::-webkit-scrollbar-track {
+    background: #0a0a0a;
+}
+#text-window::-webkit-scrollbar-thumb {
+    background: #4a3f2a;
+    border-radius: 0;
+}
+
+/* === DRUNKENNESS EFFECTS === */
+
+@keyframes tavern-sway {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-2px); }
+    75% { transform: translateX(2px); }
+}
+
+@keyframes blur-pulse-3 {
+    0%, 100% { filter: blur(1.2px); }
+    50% { filter: blur(0.4px); }
+}
+
+@keyframes blur-pulse-4 {
+    0%, 100% { filter: blur(2px); }
+    50% { filter: blur(0.6px); }
+}
+
+/* Tier 1: Merry -- very subtle */
+#text-window.drunk-1 {
+    filter: blur(0.2px);
+    animation: tavern-sway 10s ease-in-out infinite;
+}
+
+/* Tier 2: In his cups -- noticeable */
+#text-window.drunk-2 {
+    filter: blur(0.5px);
+    animation: tavern-sway 6s ease-in-out infinite;
+}
+
+/* Tier 3: Three sheets -- strong, blur pulses in and out */
+#text-window.drunk-3 {
+    animation: tavern-sway 4s ease-in-out infinite, blur-pulse-3 10s ease-in-out infinite;
+}
+
+/* Tier 4: Gone to saints -- heavy, blur pulses in and out */
+#text-window.drunk-4 {
+    animation: tavern-sway 2.5s ease-in-out infinite, blur-pulse-4 8s ease-in-out infinite;
+}
+
+/* === MESSAGE TYPES === */
+
+.msg-narration {
+    text-align: center;
+    color: #c8a86b;
+    padding: 0.15em 0;
+}
+
+.msg-player {
+    text-align: right;
+    color: #8ab4f8;
+    padding: 0.15em 0;
+}
+
+.msg-dialogue {
+    text-align: left;
+    color: #e8e8d0;
+    padding: 0.15em 0;
+}
+
+.msg-system {
+    text-align: left;
+    color: #888888;
+    padding: 0.15em 0;
+    white-space: pre-wrap; /* preserve help text formatting */
+}
+
+.msg-divider {
+    text-align: center;
+    color: #6a5f4a;
+    padding: 0.4em 0;
+    font-style: italic;
+}
+
+.msg-thinking {
+    text-align: left;
+    color: #666666;
+    font-style: italic;
+    padding: 0.15em 0;
+}
+
+.speaker {
+    color: #a0c0a0;
+    font-family: 'MedievalSharp', cursive;
+}
+
+/* === PORTRAIT BANNER === */
+
+#portrait-banner {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8em;
+    padding: 0.5em 0.8em;
+    border-bottom: 2px solid #4a3f2a;
+    margin-bottom: 0.5em;
+    background: rgba(20, 15, 8, 0.95);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+#portrait-banner.visible {
+    display: flex;
+}
+
+#portrait-img {
+    width: 128px;
+    height: 128px;
+    border: 2px solid #6a5f4a;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.6);
+    border-radius: 2px;
+    object-fit: contain;
+    cursor: pointer;
+}
+
+#portrait-img.tavern-mode {
+    width: auto;
+    height: 128px;
+    object-fit: contain;
+}
+
+#portrait-name {
+    font-family: 'MedievalSharp', cursive;
+    color: #c8a86b;
+    font-size: 1.3em;
+}
+
+/* === SIDE PANEL (Wooden Plaque) === */
+
+#side-panel {
+    flex: 1; /* 25% */
+    border-left: 3px solid #5a4a2a;
+    border-right: 2px solid #3a2a1a;
+    padding: 0.75em;
+    overflow-y: auto;
+    font-size: 0.85em;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2em;
+    background: linear-gradient(180deg, #1a1208 0%, #0f0b05 50%, #1a1208 100%);
+    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.5), -2px 0 8px rgba(0, 0, 0, 0.3);
+}
+
+.panel-section {
+    padding: 0.3em 0;
+}
+
+.panel-label {
+    color: #7a6f5a;
+    font-family: 'MedievalSharp', cursive;
+    font-size: 0.85em;
+    letter-spacing: 0.15em;
+    margin-bottom: 0.15em;
+    text-transform: uppercase;
+}
+
+.panel-value {
+    color: #c8a86b;
+}
+
+.panel-divider {
+    color: #3a2a1a;
+    text-align: center;
+    padding: 0.1em 0;
+    user-select: none;
+    border-top: 1px solid #3a2a1a;
+    border-bottom: 1px solid #3a2a1a;
+    margin: 0.15em 0;
+    font-size: 0.7em;
+}
+
+/* === INPUT BAR === */
+
+#input-bar {
+    display: none; /* hidden until game starts */
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    align-items: center;
+    gap: 0.5em;
+    padding: 0.5em 1em;
+    background: #0a0a0a;
+    border-top: 2px solid #4a3f2a;
+    z-index: 100;
+}
+
+body.game-mode #input-bar {
+    display: flex;
+}
+
+#prompt-char {
+    color: #c8a86b;
+    font-size: 1em;
+    user-select: none;
+}
+
+#cmd-input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #c8a86b;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1em;
+    caret-color: #c8a86b;
+}
+
+#cmd-input:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+/* === MUTE TOGGLE === */
+
+#mute-toggle {
+    background: none;
+    border: 1px solid #4a3f2a;
+    color: #7a6f5a;
+    font-size: 1em;
+    padding: 0.2em 0.5em;
+    cursor: pointer;
+    transition: color 0.2s;
+    line-height: 1;
+}
+
+#mute-toggle:hover {
+    color: #c8a86b;
+}
+
+#mute-toggle.muted {
+    color: #444;
+    text-decoration: line-through;
+}
+
+/* === TITLE SCREEN === */
+
+#title-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    gap: 1.5em;
+}
+
+#new-game-btn, #continue-btn {
+    background: none;
+    border: 2px solid #c8a86b;
+    color: #c8a86b;
+    font-family: 'MedievalSharp', 'Courier New', monospace;
+    font-size: 1.1em;
+    padding: 0.6em 2em;
+    cursor: pointer;
+    letter-spacing: 0.15em;
+    transition: background 0.2s, color 0.2s;
+}
+
+#new-game-btn:hover, #continue-btn:hover {
+    background: #c8a86b;
+    color: #0a0a0a;
+}
+
+/* Name input area (hidden until New Game clicked) */
+#name-input-area {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8em;
+}
+
+#name-input-area.visible {
+    display: flex;
+}
+
+#name-label {
+    color: #c8a86b;
+    font-size: 1em;
+}
+
+#name-input {
+    background: transparent;
+    border: 1px solid #4a3f2a;
+    border-bottom: 2px solid #c8a86b;
+    color: #c8a86b;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1em;
+    padding: 0.4em 0.8em;
+    text-align: center;
+    outline: none;
+    width: 250px;
+}
+
+#name-input:focus {
+    border-color: #c8a86b;
+}
+
+#name-submit-btn {
+    background: none;
+    border: 1px solid #4a3f2a;
+    color: #c8a86b;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.9em;
+    padding: 0.4em 1.5em;
+    cursor: pointer;
+}
+
+#name-submit-btn:hover {
+    background: #4a3f2a;
+}
+
+/* === LOADING SCREEN === */
+
+#loading-screen {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    gap: 1em;
+}
+
+#loading-screen.visible {
+    display: flex;
+}
+
+#loading-spinner {
+    font-size: 2em;
+    color: #c8a86b;
+}
+
+#loading-text {
+    color: #7a6f5a;
+    font-size: 1em;
+}
+
+#loading-bar {
+    color: #c8a86b;
+    font-size: 1em;
+    letter-spacing: 0.15em;
+}
+
+#loading-tip {
+    color: #7a6f5a;
+    font-size: 0.85em;
+    font-style: italic;
+    max-width: 500px;
+    text-align: center;
+    min-height: 2.5em;
+}
+
+/* === TYPEWRITER CURSOR === */
+
+.typewriter-cursor {
+    animation: blink-cursor 1s step-end infinite;
+    color: #c8a86b;
+}
+
+@keyframes blink-cursor {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* === FADE TRANSITION === */
+
+.fade-out {
+    opacity: 0 !important;
+    transition: opacity 0.6s ease-out !important;
+}
+
+/* === DISCONNECT OVERLAY === */
+
+#disconnect-overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+#disconnect-overlay p {
+    font-size: 1.2em;
+    margin-bottom: 1em;
+    color: #c8a86b;
+}
+
+#reconnect-btn {
+    background: none;
+    border: 2px solid #c8a86b;
+    color: #c8a86b;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1em;
+    padding: 0.5em 1.5em;
+    cursor: pointer;
+}
+
+#reconnect-btn:hover {
+    background: #c8a86b;
+    color: #0a0a0a;
+}
+
+/* === GUIDE MODAL === */
+
+#guide-modal {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    z-index: 1100; /* above disconnect overlay */
+    justify-content: center;
+    align-items: center;
+}
+
+#guide-modal.visible {
+    display: flex;
+}
+
+#guide-content {
+    background: #0a0a0a;
+    border: 2px double #4a3f2a;
+    width: 70%;
+    max-height: 80vh;
+    overflow-y: auto;
+    padding: 2em 2.5em;
+    position: relative;
+    color: #c8a86b;
+}
+
+/* Scrollbar for guide content -- match text-window scrollbar */
+#guide-content::-webkit-scrollbar { width: 8px; }
+#guide-content::-webkit-scrollbar-track { background: #0a0a0a; }
+#guide-content::-webkit-scrollbar-thumb { background: #4a3f2a; border-radius: 0; }
+
+#guide-close-btn {
+    position: absolute;
+    top: 0.5em;
+    right: 0.8em;
+    background: none;
+    border: none;
+    color: #7a6f5a;
+    font-size: 1.8em;
+    cursor: pointer;
+    line-height: 1;
+    transition: color 0.2s;
+}
+
+#guide-close-btn:hover {
+    color: #c8a86b;
+}
+
+#guide-content h1 {
+    font-family: 'MedievalSharp', 'Courier New', monospace;
+    font-size: 1.6em;
+    text-align: center;
+    margin-bottom: 1em;
+    color: #c8a86b;
+    letter-spacing: 0.1em;
+}
+
+#guide-content h2 {
+    font-family: 'MedievalSharp', 'Courier New', monospace;
+    font-size: 1.15em;
+    margin-bottom: 0.5em;
+    color: #c8a86b;
+}
+
+.guide-section {
+    margin-bottom: 0.5em;
+}
+
+.guide-intro {
+    color: #7a6f5a;
+    font-style: italic;
+    margin-bottom: 0.8em;
+    font-size: 0.9em;
+}
+
+.guide-cmd {
+    margin-bottom: 0.3em;
+    padding-left: 1em;
+    font-size: 0.9em;
+}
+
+.guide-cmd-name {
+    font-weight: bold;
+    color: #c8a86b;
+}
+
+.guide-cmd-alias {
+    color: #7a6f5a;
+    font-size: 0.85em;
+}
+
+.guide-cmd-desc {
+    color: #a89060;
+}
+
+.guide-cmd-detail {
+    display: block;
+    padding-left: 1em;
+    color: #7a6f5a;
+    font-size: 0.85em;
+    font-style: italic;
+}
+
+.guide-note {
+    margin-top: 0.8em;
+    padding: 0.5em 1em;
+    border-left: 2px solid #4a3f2a;
+    color: #7a6f5a;
+    font-size: 0.85em;
+    font-style: italic;
+}
+
+.guide-tier {
+    margin-bottom: 0.3em;
+    padding-left: 1em;
+    font-size: 0.9em;
+}
+
+.guide-tier-name {
+    font-weight: bold;
+    color: #c8a86b;
+}
+
+.guide-tier-desc {
+    color: #a89060;
+}
+
+.guide-tip {
+    margin-bottom: 0.4em;
+    padding-left: 1em;
+    font-size: 0.9em;
+    color: #a89060;
+}
+
+.guide-tip::before {
+    content: "~ ";
+    color: #7a6f5a;
+}
+
+.guide-lore {
+    color: #a89060;
+    font-size: 0.9em;
+    line-height: 1.6;
+}
+
+.guide-divider {
+    text-align: center;
+    color: #4a3f2a;
+    margin: 0.8em 0;
+    font-size: 0.8em;
+}
+
+/* === LIGHTBOX === */
+
+#lightbox {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.90);
+    z-index: 1200;
+    justify-content: center;
+    align-items: center;
+}
+
+#lightbox.visible { display: flex; }
+
+#lightbox-content { position: relative; }
+
+#lightbox-close-btn {
+    position: absolute;
+    top: -2em;
+    right: -1em;
+    background: none;
+    border: none;
+    color: #7a6f5a;
+    font-size: 1.8em;
+    cursor: pointer;
+    line-height: 1;
+    transition: color 0.2s;
+}
+
+#lightbox-close-btn:hover { color: #c8a86b; }
+
+#lightbox-img {
+    max-width: 90vw;
+    max-height: 90vh;
+    border: 2px solid #4a3f2a;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+    image-rendering: pixelated;
+}
+
+/* Guide button on title screen -- secondary/smaller than main buttons */
+#guide-btn {
+    background: none;
+    border: 1px solid #7a6f5a;
+    color: #7a6f5a;
+    font-family: 'MedievalSharp', 'Courier New', monospace;
+    font-size: 0.9em;
+    padding: 0.4em 1.5em;
+    cursor: pointer;
+    letter-spacing: 0.1em;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+#guide-btn:hover {
+    border-color: #c8a86b;
+    color: #c8a86b;
+}
+
+/* ? help button in input bar -- matches mute toggle style */
+#guide-help-btn {
+    background: none;
+    border: 1px solid #4a3f2a;
+    color: #7a6f5a;
+    font-size: 1em;
+    padding: 0.2em 0.5em;
+    cursor: pointer;
+    transition: color 0.2s;
+    line-height: 1;
+}
+
+#guide-help-btn:hover {
+    color: #c8a86b;
+}

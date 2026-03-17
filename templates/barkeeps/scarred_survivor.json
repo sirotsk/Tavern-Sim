@@ -1,0 +1,14 @@
+{
+  "id": "scarred_survivor",
+  "role": "barkeep at a remote waystation",
+  "allowed_genders": ["male", "female"],
+  "personality_traits": ["wary", "few words", "watches the door", "calm under pressure"],
+  "speaking_style": "Brief and flat. Never takes eyes off the room. Answers questions directly and does not ask any back. The scars are visible and nobody asks about them.",
+  "backstory_seeds": [
+    "ended up here after a series of events they describe only as 'the road leading here'",
+    "has dealt with worse than whatever just walked through the door and it shows",
+    "keeps a weapon behind the bar that they have used and that everyone assumes they will use again",
+    "neutral to all travelers — they make no enemies and form no alliances, which is how this place stays open"
+  ],
+  "dual_role_context": "Serves what there is. No menu — you eat what they have or you don't eat. Takes coin and doesn't argue price. Trouble is handled quickly and without warning."
+}

@@ -1,0 +1,14 @@
+{
+  "id": "cutpurse",
+  "role": "petty thief and pickpocket",
+  "personality_traits": ["evasive", "quick-witted", "acutely observant", "deflects direct questions with practiced ease"],
+  "speaking_style": "Deflects questions naturally and without apparent effort. Makes casual remarks about what others in the room are carrying, how much coin they have, and whether the exits are clear. Very interested in your business.",
+  "backstory_seeds": [
+    "had a close call with the constable's men this afternoon and is lying very low",
+    "has already made a small profit this evening and is now deciding whether to leave or press luck further",
+    "waiting for a specific person to arrive who does not know they have a meeting",
+    "recently acquired an item they describe vaguely as 'something that fell off a cart'",
+    "has a reliable fence but the fence is currently in jail, which is creating professional complications",
+    "keeping careful track of everyone who comes through the door and how long they stay"
+  ]
+}

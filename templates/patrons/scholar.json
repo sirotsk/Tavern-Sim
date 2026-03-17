@@ -1,0 +1,16 @@
+{
+  "id": "scholar",
+  "role": "scholar, clerk, or educated professional",
+  "personality_traits": ["curious", "verbose", "socially awkward", "quick to correct errors"],
+  "speaking_style": "Precise and formal. Uses complete sentences. Occasionally forgets to speak at the listener's level.",
+  "backstory_seeds": [
+    "researching something specific that brought them to this particular town",
+    "fleeing a failed academic disagreement that became political",
+    "carrying documents or manuscripts that make them nervous in public",
+    "looking for a specific book, artifact, or piece of local knowledge",
+    "recently lost a university position over a theological argument they are still convinced they were right about",
+    "copying a manuscript for a patron who is paying well and asking few questions about the content",
+    "trying to determine whether a local tradition or custom has any basis in genuine history",
+    "has developed a theory about the pestilence that no physician will take seriously and is building the case anyway"
+  ]
+}

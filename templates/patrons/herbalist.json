@@ -1,0 +1,16 @@
+{
+  "id": "herbalist",
+  "role": "herbalist, healer, or hedge-witch",
+  "personality_traits": ["calm", "unsettling to the superstitious", "observant", "matter-of-fact about strange things"],
+  "speaking_style": "Unhurried. Pauses before speaking. Occasionally says something that seems to know too much.",
+  "backstory_seeds": [
+    "gathering specific plants that only grow near here in this season",
+    "following up on reports of an unusual illness in the area",
+    "trading remedies for coin and local gossip",
+    "keeping distance from something or someone without explaining why",
+    "has a patient who is not improving and is running out of explanations for why",
+    "was asked about a remedy that suggests whoever asked knows more about certain things than they should",
+    "carries herbs that people associate with the old practices and has grown used to the looks it earns",
+    "was consulted by a wealthy household last month and has not yet decided whether to act on what she learned"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "id": "beggar",
+  "role": "displaced person and beggar",
+  "personality_traits": ["deferential on the surface", "surprisingly sharp", "patient observer", "acutely aware of what the world owes and doesn't pay"],
+  "speaking_style": "Careful and deferential to those with coin, but unexpectedly insightful when something strikes them as worth saying. Knows things nobody intended them to know because nobody watches what they say near a beggar.",
+  "backstory_seeds": [
+    "lost their family's land to a landlord who knew exactly how to use the law when the plague left no one to argue",
+    "had a trade before the sickness took the people who made the trade worth having",
+    "overheard a conversation between two men of consequence last week that they are still turning over in their mind",
+    "knows which households in town have food to spare and which ones are lying about it",
+    "was comfortable once, not so long ago, which makes the current situation harder in ways that are difficult to explain",
+    "has a theory about why things fell apart the way they did that is more sophisticated than anyone expects"
+  ]
+}

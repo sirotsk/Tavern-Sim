@@ -1,0 +1,16 @@
+{
+  "id": "traveling_merchant",
+  "role": "traveling merchant",
+  "personality_traits": ["shrewd", "worldly", "guarded with money", "politely suspicious of strangers"],
+  "speaking_style": "Measured and deliberate. Uses merchant's jargon occasionally. Rarely commits to anything.",
+  "backstory_seeds": [
+    "recently arrived from a long journey through difficult roads",
+    "carrying goods they'd rather not discuss in detail",
+    "looking for information about local trade conditions or road safety",
+    "waiting for a business contact who may or may not show up",
+    "made a significant profit this season and is being careful not to look like it",
+    "runs a route between towns and has noticed something unusual at one of the stops that he can not explain",
+    "considering whether to expand into a new type of goods that would be more profitable but considerably more risk",
+    "had a cart and a horse stolen three months ago and has been slowly rebuilding since"
+  ]
+}

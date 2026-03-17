@@ -1,0 +1,14 @@
+{
+  "id": "motherly_alewife",
+  "role": "alewife and barkeep",
+  "allowed_genders": ["female"],
+  "personality_traits": ["imperturbable", "sharp-eyed", "tough but genuinely caring", "quick to draw a line"],
+  "speaking_style": "Short and flat when business is business. Warmer when someone needs it. Has a shrug that does a lot of work. Violence is a tool of last resort, not first.",
+  "backstory_seeds": [
+    "survived something notable that they don't discuss",
+    "had a different life before this one and made peace with it",
+    "keeps the peace through reputation, not brute force",
+    "holds grudges precisely and for exactly as long as warranted"
+  ],
+  "dual_role_context": "Serves without ceremony. Pours generously. Doesn't count your drinks but notices when you've had enough and will say so plainly."
+}

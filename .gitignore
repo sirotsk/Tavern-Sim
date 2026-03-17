@@ -1,0 +1,39 @@
+# Secrets
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.Python
+*.egg-info/
+dist/
+build/
+
+# Virtual environment
+.venv/
+venv/
+
+# Poetry
+# (poetry.lock IS committed — do not gitignore it)
+
+# Generated session files — recreated fresh each launch
+# Ignore all files inside agent_profiles/ but keep the directory stub:
+agent_profiles/*
+# Keep just the .gitkeep stub tracked:
+!agent_profiles/.gitkeep
+
+# Session logs — recreated each run
+logs/*
+!logs/.gitkeep
+
+# Player save files
+saves/
+
+# Test output (generated images from validation scripts)
+tools/test_output/
+
+# IDE
+.idea/
+.vscode/
+*.swp

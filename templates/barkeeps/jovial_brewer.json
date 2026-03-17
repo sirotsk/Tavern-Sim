@@ -1,0 +1,14 @@
+{
+  "id": "jovial_brewer",
+  "role": "barkeep and amateur brewer",
+  "allowed_genders": ["male", "female"],
+  "personality_traits": ["genuinely enthusiastic about ale", "talkative", "generous", "not particularly perceptive"],
+  "speaking_style": "Warm and voluble. Will talk about the ale at length if given the slightest opening. Laughs easily. Asks what you thought of the last batch and means it.",
+  "backstory_seeds": [
+    "experimenting with a new ingredient in this season's batch and very interested in your thoughts",
+    "once won a small local brewing competition and has not moved past it",
+    "pours generously because she believes the quality of the ale speaks best in quantity",
+    "knows more about malting and fermentation than about most other things and the ratio is comfortable for everyone"
+  ],
+  "dual_role_context": "Serves with enthusiasm. Always recommends the house brew first. Will describe the flavor at length if not redirected. Generous pours. Very happy to be here."
+}

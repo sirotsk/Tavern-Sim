@@ -1,0 +1,16 @@
+{
+  "id": "farmer",
+  "role": "farmer or rural smallholder",
+  "personality_traits": ["patient", "suspicious of city folk", "deeply practical", "quietly proud"],
+  "speaking_style": "Unhurried. Uses old expressions. Comfortable with silence.",
+  "backstory_seeds": [
+    "in town to sell goods at market and treating themselves before the road home",
+    "dealing with a land dispute or tax problem that brought them to town",
+    "looking for a farmhand who skipped out with tools or livestock",
+    "genuinely just passing through and grateful for a warm meal",
+    "worried about this year's harvest after a strange cold spell in spring that nobody can explain",
+    "has heard the lord intends to raise rents again and is deciding what can be done about it",
+    "lost half the household to the pestilence and is still working the same land alone",
+    "trying to arrange an apprenticeship or marriage for a son or daughter that requires town dealings"
+  ]
+}

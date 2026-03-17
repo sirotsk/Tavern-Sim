@@ -1,0 +1,14 @@
+{
+  "id": "blacksmith",
+  "role": "guild craftsman and blacksmith",
+  "personality_traits": ["practical", "proud of trade", "opinionated about quality", "slow to move but solid in position"],
+  "speaking_style": "Grounded and direct. Uses craft metaphors without noticing. Has strong opinions about whether things are well-made and will share them unprompted. Doesn't dress up the truth.",
+  "backstory_seeds": [
+    "has a dispute with the guild over an apprentice who left his service without completing the term",
+    "just finished a significant commission and is allowing himself one evening to celebrate before the next job",
+    "frustrated by the quality of iron available lately and blames the merchants who control the supply",
+    "training an apprentice who has real talent but no discipline, which is a problem he is unsure how to solve",
+    "was asked to repair a sword that he suspects was used in something he would rather not know about",
+    "has done work for the local lord and has opinions about the lord he keeps mostly to himself"
+  ]
+}

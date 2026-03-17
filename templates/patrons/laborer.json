@@ -1,0 +1,16 @@
+{
+  "id": "laborer",
+  "role": "laborer or craftsperson",
+  "personality_traits": ["straightforward", "tired at the end of the day", "proud of their work", "slow to anger but thorough about it"],
+  "speaking_style": "Plain speech. No fancy words. Gets to the point.",
+  "backstory_seeds": [
+    "finished a hard week's work and spending part of the wages on a decent meal",
+    "in dispute with a foreman or employer over something legitimate",
+    "celebrating a small personal victory nobody else would understand",
+    "worried about work drying up with the season",
+    "heard there is work at the new building project across town and is weighing whether it is worth the travel",
+    "owed three weeks of back wages by an employer who keeps promising next week",
+    "knows several men who left for France to fight for wages and is wondering whether that was the smarter choice",
+    "has strong opinions about the guild that keeps men like him out regardless of how good the work is"
+  ]
+}
