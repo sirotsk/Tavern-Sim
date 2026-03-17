@@ -11,7 +11,7 @@ A text-based medieval tavern RPG powered by Google Gemini AI. Chat with AI-drive
 ## Quick Start
 
 -----------------------------------------------------------------------------------------------
-# NOAH READ THIS FOR STARTUP
+# READ THIS FOR STARTUP
 
 ## 1. Install peotry
 * open a cmd terminal and paste this:
