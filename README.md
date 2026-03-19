@@ -18,7 +18,7 @@ A text-based medieval tavern RPG powered by Google Gemini AI. Chat with AI-drive
 curl -sSL https://install.python-poetry.org | py -
 
 After that finishes run this:
-[Environment]::SetEnvironmentVariable("Path", [Environment]::GetEnvironmentVariable("Path", "User") + ";C:\Users\sirot\AppData\Roaming\Python\Scripts", "User")
+[Environment]::SetEnvironmentVariable("Path", [Environment]::GetEnvironmentVariable("Path", "User") + ";C:\Users\[user]\AppData\Roaming\Python\Scripts", "User")
 
 Okay so thats wrong but give it to Claude to fix.
 
